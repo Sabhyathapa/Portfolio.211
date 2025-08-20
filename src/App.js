@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
-import locationIcon from './glowing-pin.svg';
-import designerIcon from './icons/designer-icon.png';
 // import verifiedBadge from './icons/verified-badge.png';
 import Process from './components/Process/Process';
 import Contact from './Contact';
@@ -562,12 +559,13 @@ function HomePage({
           </div>
           
           <div className="back-to-top text-reveal delay-3">
-            <a href="#" onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}>
+            <button
+              type="button"
+              className="back-to-top-btn"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               BACK TO TOP
-            </a>
+            </button>
           </div>
         </div>
       </div>
