@@ -140,7 +140,7 @@ body::before, body::after {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  z-index: -1; /* Move lines behind all content to prevent overlap */
+  z-index: 0; /* Keep lines behind content but visible across browsers */
 }
 
 body::before {
@@ -148,17 +148,17 @@ body::before {
   background: linear-gradient(
     to right,
     transparent 0,
-    transparent calc(20vw - 0.5px), /* First line at 20% */
-    rgba(255,255,255,0.07) calc(20vw - 0.4px), /* Start first line */
-    rgba(255,255,255,0.07) calc(20vw + 0.4px), /* End first line */
+    transparent calc(20vw - 0.75px), /* First line at 20% */
+    rgba(255,255,255,0.10) calc(20vw - 0.75px), /* Start first line */
+    rgba(255,255,255,0.10) calc(20vw + 0.75px), /* End first line */
     transparent calc(20vw + 0.4px),
-    transparent calc(50vw - 0.4px), /* Second line at 50% */
-    rgba(255,255,255,0.07) calc(50vw - 0.5px), /* Start second line */
-    rgba(255,255,255,0.07) calc(50vw + 0.5px), /* End second line */
+    transparent calc(50vw - 0.75px), /* Second line at 50% */
+    rgba(255,255,255,0.10) calc(50vw - 0.75px), /* Start second line */
+    rgba(255,255,255,0.10) calc(50vw + 0.75px), /* End second line */
     transparent calc(50vw + 0.5px),
-    transparent calc(80vw - 0.5px), /* Third line at 80% */
-    rgba(255,255,255,0.07) calc(80vw - 0.5px), /* Start third line */
-    rgba(255,255,255,0.07) calc(80vw + 0.5px), /* End third line */
+    transparent calc(80vw - 0.75px), /* Third line at 80% */
+    rgba(255,255,255,0.10) calc(80vw - 0.75px), /* Start third line */
+    rgba(255,255,255,0.10) calc(80vw + 0.75px), /* End third line */
     transparent calc(80vw + 0.5px),
     transparent 100%
   );
@@ -169,13 +169,13 @@ body::after {
   background: linear-gradient(
     to bottom,
     transparent 0,
-    transparent calc(50vh - 160px - 0.5px), /* Transparent before the first line */
-    rgba(255,255,255,0.07) calc(50vh - 160px - 0.4px), /* Start first line */
-    rgba(255,255,255,0.07) calc(50vh - 160px + 0.4px), /* End first line */
+    transparent calc(50vh - 160px - 0.75px), /* Transparent before the first line */
+    rgba(255,255,255,0.10) calc(50vh - 160px - 0.75px), /* Start first line */
+    rgba(255,255,255,0.10) calc(50vh - 160px + 0.75px), /* End first line */
     transparent calc(50vh - 160px + 0.4px),
-    transparent calc(50vh + 146px - 0.4px), /* Transparent between lines */
-    rgba(255,255,255,0.07) calc(50vh + 146px - 0.5px), /* Start second line */
-    rgba(255,255,255,0.07) calc(50vh + 146px + 0.5px), /* End second line */
+    transparent calc(50vh + 146px - 0.75px), /* Transparent between lines */
+    rgba(255,255,255,0.10) calc(50vh + 146px - 0.75px), /* Start second line */
+    rgba(255,255,255,0.10) calc(50vh + 146px + 0.75px), /* End second line */
     transparent calc(50vh + 146px + 0.5px) /* Transparent after the second line */
   );
 }
@@ -778,6 +778,8 @@ body::after {
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .pricing-card {
@@ -786,12 +788,15 @@ body::after {
   border-radius: 16px;
   padding: 1.5rem 1.5rem 1.5rem 0rem;
   width: 324px;
+  min-width: 300px; /* Prevent Chrome from making cards too small */
   height: 434px;
+  min-height: 400px; /* Prevent height shrinking */
   position: relative;
   transition: all 0.3s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex: 0 1 auto; /* Prevent flex shrinking */
 }
 
 .pricing-card:hover {
@@ -1063,6 +1068,7 @@ body::after {
   }
   .pricing-card {
     width: 280px;
+    min-width: 260px; /* Maintain minimum width */
     padding: 1.5rem;
   }
   
@@ -1090,6 +1096,7 @@ body::after {
   .pricing-card {
     width: 100%;
     max-width: 400px;
+    min-width: 320px; /* Ensure minimum width on mobile */
     height: auto;
     min-height: 400px;
   }
@@ -1121,6 +1128,7 @@ body::after {
   
   .pricing-card {
     padding: 1rem;
+    min-width: 280px; /* Maintain minimum width on small screens */
     min-height: 350px;
   }
   
