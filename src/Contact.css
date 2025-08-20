@@ -1,0 +1,524 @@
+/* Contact Page Styles */
+.contact-page {
+  min-height: 100vh;
+  padding-bottom: 16rem; /* Increased from 8rem to 16rem to accommodate brand name */
+  background-color: transparent;
+  position: relative;
+  z-index: 5; /* Ensure contact page is above background lines */
+  overflow: hidden;
+}
+
+/* Ensure no duplicate scrollbars */
+.contact-page * {
+  overflow: visible;
+}
+
+.contact-page .contact-container {
+  overflow: visible;
+}
+
+
+
+/* Local reveal animations for Contact page */
+.section-reveal {
+	opacity: 0;
+	transform: translateY(26px);
+	transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+	          transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+	will-change: opacity, transform;
+}
+.section-reveal.in-view {
+	opacity: 1;
+	transform: none;
+}
+
+.text-reveal {
+	opacity: 0;
+	transform: translateY(18px);
+	filter: blur(8px);
+	transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+	          transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+	          filter 900ms ease;
+}
+.text-reveal.in-view {
+	opacity: 1;
+	transform: translateY(0);
+	filter: blur(0);
+}
+
+/* delays for sequencing */
+.delay-1 { transition-delay: 90ms; }
+.delay-2 { transition-delay: 180ms; }
+.delay-3 { transition-delay: 270ms; }
+.delay-4 { transition-delay: 360ms; }
+.delay-5 { transition-delay: 450ms; }
+
+/* Contact Header */
+.contact-header {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+}
+
+.contact-clock {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1rem;
+  z-index: 4;
+}
+
+.clock-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.clock-time {
+  color: #fff;
+  font-size: 1rem;
+}
+
+
+
+.contact-back-btn {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 4;
+}
+
+.contact-back-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 6rem;
+  z-index: 6; /* Ensure container is above background lines */
+  overflow: visible;
+}
+
+/* Left Section - Contact Form */
+
+.contact-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 3;
+}
+
+.contact-content {
+  max-width: 500px;
+  width: 100%;
+  z-index: 3;
+}
+
+.contact-main-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  z-index: 3;
+}
+
+.contact-description {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  color: #bbbbbb;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  font-weight: 400;
+  z-index: 3;
+}
+
+.contact-form-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 3;
+}
+
+/* Enhanced Form Styling */
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #474747;
+  border-radius: 4px;
+  background: rgb(34, 34, 34);
+  color: #fff;
+  font-family: 'Clash Display', 'Arial', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #383838;
+  
+  
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+  opacity: 0.8;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Form Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Enhanced Submit Button */
+.submit-btn {
+  background:rgb(255, 255, 255);
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: 'Clash Display', 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #666;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading Animation */
+.submit-btn:disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Gmail Contact Section */
+.gmail-contact {
+  margin-top: 2rem;
+  text-align: left;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gmail-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+  display: inline;
+}
+
+.gmail-link {
+  color: #fff;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline;
+}
+
+.gmail-link:hover {
+  text-decoration: underline;
+}
+
+/* Right Section - Portrait Image */
+.contact-portrait-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 3;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 800px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  z-index: 4;
+}
+
+.portrait-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.8) contrast(1.2) saturate(1.5);
+}
+
+
+
+/* Brand Name */
+.contact-brand {
+  position: absolute;
+  bottom: -9rem; /* Moved further down from -4rem */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it's above background lines */
+}
+
+.brand-text {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 15rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.7;
+  margin-top: 0; /* Remove the large margin that was causing overlap */
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.brand-text.brand-animated {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Force animation to work */
+.contact-brand .brand-text.brand-animated {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    padding-top: 8rem;
+  }
+  
+  .contact-form-section {
+    padding: 1rem;
+  }
+  
+  .contact-portrait-section {
+    padding: 1rem;
+    min-height: 400px;
+  }
+  
+  .contact-main-title {
+    font-size: 3rem;
+  }
+  
+  .brand-text {
+    font-size: 6rem;
+  }
+  
+  .contact-brand {
+    bottom: -14rem; /* Consistent positioning across screen sizes */
+  }
+  
+  .contact-page {
+    padding-bottom: 12rem; /* Adjusted for medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-header {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  
+  .contact-clock {
+    font-size: 0.8rem;
+  }
+  
+  .contact-dot {
+    width: 4px;
+    height: 4px;
+    min-width: 4px;
+    min-height: 4px;
+  }
+  
+  .contact-dots {
+    gap: 0.3rem;
+  }
+  
+  .contact-dots-left,
+  .contact-dots-right {
+    gap: 0.4rem;
+  }
+  
+  .contact-main-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+  }
+  
+  .contact-form-title {
+    font-size: 1.2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .gmail-contact {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .gmail-link {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .brand-text {
+    font-size: 4rem;
+  }
+  
+  .contact-brand {
+    bottom: -14rem; /* Consistent positioning across screen sizes */
+  }
+  
+  .contact-page {
+    padding-bottom: 10rem; /* Adjusted for mobile screens */
+  }
+}
+
+/* Success and Error Messages */
+.submit-success,
+.submit-error {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  animation: slideIn 0.3s ease;
+}
+
+.submit-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+}
+
+.submit-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disabled form elements */
+.contact-form input:disabled,
+.contact-form textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
