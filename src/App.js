@@ -191,7 +191,7 @@ function HomePage({
         <div className="approach-section">
           <div className="approach-top-row">
             <span className="approach-index">01</span>
-            <span className="approach-top">//APPROACH</span>
+            <span className="approach-top">{'//'}APPROACH</span>
           </div>
           <div className="approach-main">I'M SABHYA THAPA BASED IN <br></br>DEHRADUN, INDIA.</div>
           <div className="approach-sub">I employed responsive design skills to maintain<br></br> consistency across all devices.</div>
@@ -204,7 +204,7 @@ function HomePage({
       </div>
       <div className="grey-voice-section">
         <div className="grey-voice-label grey-voice-label-left">05</div>
-        <div className="grey-voice-label grey-voice-label-center">//VOICE OF SABHYA</div>
+        <div className="grey-voice-label grey-voice-label-center">{'//'}VOICE OF SABHYA</div>
         <div className="grey-voice-label grey-voice-label-right">SINCE 2006</div>
         <div className="grey-voice-content">
           <h1 className="grey-voice-title text-reveal">
@@ -222,7 +222,7 @@ function HomePage({
       {/* Pricing Section */}
       <div className="pricing-section section-reveal">
         <div className="pricing-label pricing-label-left">06</div>
-        <div className="pricing-label pricing-label-center">//PRICING</div>
+        <div className="pricing-label pricing-label-center">{'//'}PRICING</div>
         <div className="pricing-label pricing-label-right">BEST PLANS</div>
         <div className="pricing-content">
           <h1 className="pricing-title text-reveal delay-1">
@@ -445,7 +445,7 @@ function HomePage({
       {/* FAQ Section */}
       <div className="faq-section section-reveal">
         <div className="faq-label faq-label-left">07</div>
-        <div className="faq-label faq-label-center">//FAQ</div>
+        <div className="faq-label faq-label-center">{'//'}FAQ</div>
         <div className="faq-label faq-label-right">CONCERNS</div>
         <div className="faq-content">
           <h1 className="faq-title text-reveal delay-1">

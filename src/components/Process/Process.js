@@ -124,7 +124,7 @@ const Process = () => {
       <div className="portfolio-section">
         <div className="portfolio-header-row">
           <span className="portfolio-index">02</span>
-          <span className="portfolio-title">//PORTFOLIO</span>
+          <span className="portfolio-title">{'//'}PORTFOLIO</span>
           <span className="portfolio-years">2023 - 2025</span>
         </div>
         <div className="portfolio-main-row">
@@ -175,7 +175,7 @@ const Process = () => {
       <section className="about-section section-reveal">
         <div className="about-header-row text-reveal delay-1">
           <span className="about-index">03</span>
-          <span className="about-title">//WHO AM I</span>
+          <span className="about-title">{'//'}WHO AM I</span>
           <span className="about-years">SINCE 2006</span>
         </div>
         <h1 className="about-main-title text-reveal delay-2">MORE ABOUT<br/><span className="about-name">SABHYA©</span></h1>
@@ -199,7 +199,7 @@ const Process = () => {
       <section className="services-section section-reveal">
         <div className="services-top-row">
           <span className="services-index">04</span>
-          <span className="services-title">//SERVICES</span>
+          <span className="services-title">{'//'}SERVICES</span>
           <span className="services-fast">FAST DELIVERY</span>
         </div>
         <div className="services-header-row">
