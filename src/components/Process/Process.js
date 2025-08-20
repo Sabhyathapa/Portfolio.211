@@ -22,9 +22,7 @@ const Process = () => {
     }
   };
 
-  const handleContactClick = () => {
-    navigate('/contact');
-  };
+  
 
   // Reveal process cards and services texts on scroll
   useEffect(() => {
