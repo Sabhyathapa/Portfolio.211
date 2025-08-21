@@ -481,7 +481,7 @@ body::after {
   transition: transform 0.3s ease;
   filter: brightness(0.8) contrast(1.2) saturate(1.5);
 }
-
+  
 .approach-section {
   width: 100%;
   max-width: 1200px;
@@ -780,6 +780,8 @@ body::after {
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .pricing-card {
@@ -789,11 +791,14 @@ body::after {
   padding: 1.5rem 1.5rem 1.5rem 0rem;
   width: 324px;
   min-width: 300px; /* Prevent Chrome from making cards too small */
+  min-width: 300px; /* Prevent Chrome from making cards too small */
+  min-height: 400px; /* Prevent height shrinking */
   height: 434px;
   min-height: 400px; /* Prevent height shrinking */
   position: relative;
   transition: all 0.3s ease;
   overflow: hidden;
+  flex: 0 1 auto; /* Prevent flex shrinking */
   display: flex;
   flex-direction: column;
   flex: 0 1 auto; /* Prevent flex shrinking */
@@ -1065,6 +1070,7 @@ body::after {
 @media (max-width: 1200px) {
   .pricing-cards {
     gap: 1.5rem;
+    min-width: 260px; /* Maintain minimum width */
   }
   .pricing-card {
     width: 280px;
@@ -1092,6 +1098,7 @@ body::after {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    min-width: 320px; /* Ensure minimum width on mobile */
   }
   .pricing-card {
     width: 100%;
@@ -1123,6 +1130,7 @@ body::after {
 @media (max-width: 600px) {
   .pricing-cards {
     gap: 1.5rem;
+    min-width: 280px; /* Maintain minimum width on small screens */
     padding: 0 1rem;
   }
   
@@ -1589,6 +1597,40 @@ body::after {
   justify-content: center;
   background: none;
   z-index: 2;
+
+/* Global reveal animations (used across the app) */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.section-reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.text-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(8px);
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+              filter 900ms ease;
+}
+.text-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* delays for sequencing */
+.delay-1 { transition-delay: 90ms; }
+.delay-2 { transition-delay: 180ms; }
+.delay-3 { transition-delay: 270ms; }
+.delay-4 { transition-delay: 360ms; }
+.delay-5 { transition-delay: 450ms; }
   margin-top: 3rem;
   padding: 0 0 1rem 0;
   font-family: 'Clash Display', 'Arial', sans-serif;

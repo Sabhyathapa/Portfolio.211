@@ -53,6 +53,40 @@
 .delay-4 { transition-delay: 360ms; }
 .delay-5 { transition-delay: 450ms; }
 
+/* Local reveal animations for Contact page */
+.section-reveal {
+	opacity: 0;
+	transform: translateY(26px);
+	transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+	          transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+	will-change: opacity, transform;
+}
+.section-reveal.in-view {
+	opacity: 1;
+	transform: none;
+}
+
+.text-reveal {
+	opacity: 0;
+	transform: translateY(18px);
+	filter: blur(8px);
+	transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+	          transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+	          filter 900ms ease;
+}
+.text-reveal.in-view {
+	opacity: 1;
+	transform: translateY(0);
+	filter: blur(0);
+}
+
+/* delays for sequencing */
+.delay-1 { transition-delay: 90ms; }
+.delay-2 { transition-delay: 180ms; }
+.delay-3 { transition-delay: 270ms; }
+.delay-4 { transition-delay: 360ms; }
+.delay-5 { transition-delay: 450ms; }
+
 /* Contact Header */
 .contact-header {
   position: absolute;
@@ -241,7 +275,11 @@
 }
 
 .submit-btn:active:not(:disabled) {
-  transform: translateY(0);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .submit-btn:disabled {
@@ -250,6 +288,8 @@
   background: #666;
   transform: none;
   box-shadow: none;
+  margin: 0;
+  display: inline;
 }
 
 /* Loading Animation */
@@ -260,11 +300,7 @@
   left: 50%;
   width: 20px;
   height: 20px;
-  margin: -10px 0 0 -10px;
-  border: 2px solid transparent;
-  border-top: 2px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+  display: inline;
 }
 
 @keyframes spin {
