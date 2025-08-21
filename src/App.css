@@ -17,48 +17,7 @@ body {
   overflow: visible;
 }
 
-/* Local Fonts */
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Extralight.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('./fonts/ClashDisplay-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
+/* Using Clash Display via CDN (see link in public/index.html) */
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
