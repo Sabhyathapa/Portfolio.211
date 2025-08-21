@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import logo from './logo.svg';
 import './App.css';
+import locationIcon from './glowing-pin.svg';
+import designerIcon from './icons/designer-icon.png';
 // import verifiedBadge from './icons/verified-badge.png';
 import Process from './components/Process/Process';
 import Contact from './Contact';
@@ -49,9 +52,9 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Minimal observer to reveal text-reveal/section-reveal/image-reveal globally
+  // Minimal observer to reveal text-reveal/section-reveal globally (e.g., grey-voice)
   useEffect(() => {
-    const targets = Array.from(document.querySelectorAll('.text-reveal, .section-reveal, .image-reveal-strong'));
+    const targets = Array.from(document.querySelectorAll('.text-reveal, .section-reveal'));
     if (targets.length === 0) return;
     const observer = new IntersectionObserver(
       (entries, obs) => {
@@ -184,14 +187,14 @@ function HomePage({
         <img 
           src="https://framerusercontent.com/images/QDcJB2OLe3UAxM2RM7hyw8eeCo.jpg?scale-down-to=2048" 
           alt="" 
-          className="portfolio-image image-reveal-strong"
+          className="portfolio-image"
         />
 
         {/* Approach Section */}
         <div className="approach-section">
           <div className="approach-top-row">
             <span className="approach-index">01</span>
-            <span className="approach-top">{'//'}APPROACH</span>
+            <span className="approach-top">//APPROACH</span>
           </div>
           <div className="approach-main">I'M SABHYA THAPA BASED IN <br></br>DEHRADUN, INDIA.</div>
           <div className="approach-sub">I employed responsive design skills to maintain<br></br> consistency across all devices.</div>
@@ -204,7 +207,7 @@ function HomePage({
       </div>
       <div className="grey-voice-section">
         <div className="grey-voice-label grey-voice-label-left">05</div>
-        <div className="grey-voice-label grey-voice-label-center">{'//'}VOICE OF SABHYA</div>
+        <div className="grey-voice-label grey-voice-label-center">//VOICE OF SABHYA</div>
         <div className="grey-voice-label grey-voice-label-right">SINCE 2006</div>
         <div className="grey-voice-content">
           <h1 className="grey-voice-title text-reveal">
@@ -222,7 +225,7 @@ function HomePage({
       {/* Pricing Section */}
       <div className="pricing-section section-reveal">
         <div className="pricing-label pricing-label-left">06</div>
-        <div className="pricing-label pricing-label-center">{'//'}PRICING</div>
+        <div className="pricing-label pricing-label-center">//PRICING</div>
         <div className="pricing-label pricing-label-right">BEST PLANS</div>
         <div className="pricing-content">
           <h1 className="pricing-title text-reveal delay-1">
@@ -239,7 +242,7 @@ function HomePage({
           
           {/* Pricing Cards */}
           <div className="pricing-cards section-reveal delay-3">
-            <div className="pricing-card section-reveal delay-1">
+            <div className="pricing-card">
               <div className="card-header">
                 <div className="card-header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <div className={`price ${isAnimating ? 'animating' : ''}`}>
@@ -303,7 +306,7 @@ function HomePage({
             </div>
 
             {/* Second Pricing Card */}
-            <div className="pricing-card section-reveal delay-2">
+            <div className="pricing-card">
               <div className="card-header">
                 <div className="card-header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <div className={`price ${isAnimating ? 'animating' : ''}`}>
@@ -367,7 +370,7 @@ function HomePage({
             </div>
 
             {/* Third Pricing Card */}
-            <div className="pricing-card section-reveal delay-3">
+            <div className="pricing-card">
               <div className="card-header">
                 <div className="card-header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <div className={`price ${isAnimating ? 'animating' : ''}`}>
@@ -445,7 +448,7 @@ function HomePage({
       {/* FAQ Section */}
       <div className="faq-section section-reveal">
         <div className="faq-label faq-label-left">07</div>
-        <div className="faq-label faq-label-center">{'//'}FAQ</div>
+        <div className="faq-label faq-label-center">//FAQ</div>
         <div className="faq-label faq-label-right">CONCERNS</div>
         <div className="faq-content">
           <h1 className="faq-title text-reveal delay-1">
@@ -524,7 +527,7 @@ function HomePage({
             CONTACT NOW
           </button>
           
-          <div className="portrait-container section-reveal delay-2">
+          <div className="portrait-container">
             <img 
               src="https://framerusercontent.com/images/u6Idk7qL4dVIYM1Dq4mj29hIpaM.jpg?scale-down-to=1024" 
               alt="Portrait" 
@@ -546,9 +549,9 @@ function HomePage({
       </div>
 
       {/* About Me Section */}
-      <div className="about-section section-reveal">
+      <div className="about-section">
         <div className="about-content">
-          <div className="about-text text-reveal delay-1">
+          <div className="about-text">
             BASED IN INDIA, I AM AN INNOVATIVE DESIGNER AND DEVELOPER. MY<br/>
             PASSION FOR MINIMALIST AESTHETICS, ELEGANT TYPOGRAPHY, AND<br/>
             INTUITIVE DESIGN IS EVIDENT IN MY WORK.
@@ -558,14 +561,13 @@ function HomePage({
             SABHYA
           </div>
           
-          <div className="back-to-top text-reveal delay-3">
-            <button
-              type="button"
-              className="back-to-top-btn"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
+          <div className="back-to-top">
+            <a href="#" onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
               BACK TO TOP
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -574,3 +576,4 @@ function HomePage({
 }
 
 export default App;
+
